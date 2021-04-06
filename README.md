@@ -37,12 +37,11 @@ After cloning the repository, open the terminal, `cd into the directory` where t
 - Github: [@githubhandle](https://github.com/verissimohenry)
 - Twitter: [@twitterhandle](https://twitter.com/verissimohenry)
 - Linkedin: [linkedin](https://www.linkedin.com/in/henry-verissimo-618906167/)
-- Email:  verissimohenry04@gmail.com
+- Email: verissimohenry04@gmail.com
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
-
 
 ## Show your support
 
