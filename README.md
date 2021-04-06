@@ -1,4 +1,4 @@
-# tic-tac-toe![](assets/1.png)
+# tic-tac-toe![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Tic Tac Toe Game
 
