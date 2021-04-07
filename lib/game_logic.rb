@@ -18,7 +18,7 @@ module GameLogic
         break
       elsif player.counter >= 5 && intersection != sub_array
         @game_over = true
-        @winner = 'VER'
+        @winner = 'DRAW'
       end
     end
   end
