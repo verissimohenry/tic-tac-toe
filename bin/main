@@ -73,7 +73,7 @@ class Game
   def begin_game
     initialize_game
     draw_board
-    main_process until game_over
+    main_part until game_over
     puts
     if @winner == 'VER'
       puts "It's VER"
@@ -81,7 +81,7 @@ class Game
       puts "#{@winner} is Winner!💯"
     end
     puts
-    puts 'Game over💤. Thank you for playing!'
+    puts 'Game over💤. Thank you for playing!🎲'
     puts
   end
 end
