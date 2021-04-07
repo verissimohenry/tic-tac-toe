@@ -22,4 +22,10 @@ module GameLogic
       end
     end
   end
+
+  def collect_answers_of_player(player)
+    player.answers << player.choice
+    player.counter += 1
+    @choices[player.choice - 1] = player.symbol
+  end
 end
