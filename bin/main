@@ -22,3 +22,23 @@ def draw_board
   puts "| #{@choices[6]} | #{@choices[7]} | #{@choices[8]} |"
   puts '+---+---+---+'
 end
+
+def initialize_game
+  puts
+  puts 'Welcome Gamers'
+  puts
+  puts 'Enter Player 1 name: '
+  @player1 = gets.chomp
+  @players['X'] = @player1
+  puts 'Enter player 2 name: '
+  @player2 = gets.chomp
+  @players['O'] = @player2
+  sleep(1)
+  puts
+  puts "#{@player1} will be O, and #{@player2} will be X."
+  sleep(1)
+  puts
+  puts "Let's start!"
+  puts
+  sleep(1)
+end
