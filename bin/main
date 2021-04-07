@@ -26,4 +26,27 @@ class Game
     puts '+---+---+---+'
   end
 
+  def initialize_game
+    puts 'Welcome to the game'
+    puts 'Enter Player 1 name: '
+    @player1.name = gets.chomp
+    until valid_name(@player1.name)
+      puts 'Please enter a valid name (the length should be between 1 and 20, no symbols or digits'
+      @player1.name = gets.chomp
+    end
+    @player1.symbol = 'O'
+    puts 'Enter player 2 name: '
+    @player2.name = gets.chomp
+    until valid_name(@player2.name)
+      puts 'Please enter a valid name (the length should be between 1 and 20, no symbols or digits'
+      @player2.name = gets.chomp
+    end
+    @player2.symbol = 'X'
+    sleep(1)
+    puts "#{@player1.name} will be #{@player1.symbol}, and #{@player2.name} will be #{@player2.symbol}."
+    sleep(1)
+    puts "Let's start!"
+    sleep(1)
+  end
+
 end
