@@ -1,2 +1,4 @@
 #!/usr/bin/env ruby
-puts 'Hello!'
+class Game
+  attr_accessor :player1, :player2, :players
+  
