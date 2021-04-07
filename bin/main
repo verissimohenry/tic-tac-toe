@@ -75,8 +75,8 @@ class Game
     draw_board
     main_process until game_over
     puts
-    if @winner == 'TIE'
-      puts "It's TIE"
+    if @winner == 'VER'
+      puts "It's VER"
     else
       puts "#{@winner} is Winner!"
     end
