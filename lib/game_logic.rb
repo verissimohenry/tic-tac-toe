@@ -28,4 +28,8 @@ module GameLogic
     player.counter += 1
     @choices[player.choice - 1] = player.symbol
   end
+
+  def game_over
+    @game_over
+  end
 end
