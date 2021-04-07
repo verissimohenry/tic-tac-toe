@@ -29,10 +29,10 @@ def initialize_game
   puts
   puts 'Enter Player 1 name: '
   @player1 = gets.chomp
-  @players['X'] = @player1
+  @players['O'] = @player1
   puts 'Enter player 2 name: '
   @player2 = gets.chomp
-  @players['O'] = @player2
+  @players['X'] = @player2
   sleep(1)
   puts
   puts "#{@player1} will be O, and #{@player2} will be X."
