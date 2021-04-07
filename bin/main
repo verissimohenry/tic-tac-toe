@@ -73,7 +73,7 @@ class Game
 
   def begin_game
     initialize_game
-    main_process until @game_over
+    main_part until @game_over
     if @winner == 'TIE'
       puts "It's TIE"
     else
