@@ -9,7 +9,7 @@ class Player
     @choice = nil
   end
 
-  def to_s
+  def to_s bvbv
     "Name = #{@name} answers = #{answers} symbol = #{symbol} choiche = #{choice}"
   end
 end
