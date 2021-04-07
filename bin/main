@@ -57,7 +57,7 @@ class Game
       puts 'Please select an available cell from the board: '
       good_answer = false
       until good_answer
-        player.choice = gets.chomp.to_ih
+        player.choice = gets.chomp.to_i
         if @choices.include?(player.choice)
           collect_answers_of_player(player)
           good_answer = true
