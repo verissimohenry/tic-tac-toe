@@ -65,7 +65,7 @@ class Game
           puts "Invalid input❌, #{player.name} should try again (input should be a number form 1 to 9)"
         end
       end
-      main_process_logic(player)
+      main_part_logic(player)
       draw_board
     end
   end
