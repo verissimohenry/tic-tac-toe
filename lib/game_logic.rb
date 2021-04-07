@@ -1,6 +1,6 @@
 require_relative 'player_logic'
 
-class GameLogic
+module GameLogic
   def main_part_logic(player)
     check_outcome(player)
     game_over
