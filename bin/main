@@ -85,3 +85,6 @@ class Game
     puts
   end
 end
+
+game = Game.new
+game.begin_game
