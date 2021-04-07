@@ -27,7 +27,7 @@ class Game
   end
 
   def initialize_game
-    puts 'Welcome to the game'
+    puts 'Welcome to the game💻'
     puts 'Enter Player 1 name: '
     @player1.name = gets.chomp
     until valid_name(@player1.name)
@@ -45,7 +45,7 @@ class Game
     sleep(1)
     puts "#{@player1.name} will be #{@player1.symbol}, and #{@player2.name} will be #{@player2.symbol}."
     sleep(1)
-    puts "Let's start!"
+    puts "Let's start!🔑"
     sleep(1)
   end
 
@@ -62,7 +62,7 @@ class Game
           collect_answers_of_player(player)
           good_answer = true
         else
-          puts "Invalid input, #{player.name} should try again (input should be a number form 1 to 9)"
+          puts "Invalid input❌, #{player.name} should try again (input should be a number form 1 to 9)"
         end
       end
       main_process_logic(player)
@@ -78,10 +78,10 @@ class Game
     if @winner == 'VER'
       puts "It's VER"
     else
-      puts "#{@winner} is Winner!"
+      puts "#{@winner} is Winner!💯"
     end
     puts
-    puts 'Game over. Thank you for playing!'
+    puts 'Game over💤. Thank you for playing!'
     puts
   end
 end
