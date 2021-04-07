@@ -69,4 +69,21 @@ class Game
       draw_board
     end
   end
+
+  public
+
+  def begin_game
+    initialize_game
+    draw_board
+    main_process until game_over
+    puts
+    if @winner == 'TIE'
+      puts "It's TIE"
+    else
+      puts "#{@winner} is Winner!"
+    end
+    puts
+    puts 'Game over. Thank you for playing!'
+    puts
+  end
 end
