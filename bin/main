@@ -74,8 +74,8 @@ class Game
   def begin_game
     initialize_game
     main_part until @game_over
-    if @winner == 'TIE'
-      puts "It's TIE"
+    if @winner == 'VER'
+      puts "It's VER"
     else
       puts "#{@winner} is Winner!"
     end
