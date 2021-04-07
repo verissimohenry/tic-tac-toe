@@ -1,11 +1,15 @@
 #!/usr/bin/env ruby
+require_relative '../lib/game_logic'
+require_relative '../lib/player_logic'
+
 class Game
+  include GameLogic
   attr_accessor :player1, :player2, :players
 
   def initialize()
-    @player1 = nil
-    @player2 = nil
-    @players = {}
+    @player1 = Player.new
+    @player2 = Player.new
+    @players = [@player1, @player2]
     @game_over = false
     @counter = 0
     @choices = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -23,64 +27,62 @@ class Game
   end
 
   def initialize_game
-    puts
-    puts 'Welcome Gamers'
-    puts
+    puts 'Welcome to the game💻'
     puts 'Enter Player 1 name: '
-    @player1 = gets.chomp
-    @players['O'] = @player1
+    @player1.name = gets.chomp
+    until valid_name(@player1.name)
+      puts 'Please enter a valid name (the length should be between 1 and 20, no symbols or digits'
+      @player1.name = gets.chomp
+    end
+    @player1.symbol = 'O'
     puts 'Enter player 2 name: '
-    @player2 = gets.chomp
-    @players['X'] = @player2
+    @player2.name = gets.chomp
+    until valid_name(@player2.name)
+      puts 'Please enter a valid name (the length should be between 1 and 20, no symbols or digits'
+      @player2.name = gets.chomp
+    end
+    @player2.symbol = 'X'
     sleep(1)
-    puts
-    puts "#{@player1} will be O, and #{@player2} will be X."
+    puts "#{@player1.name} will be #{@player1.symbol}, and #{@player2.name} will be #{@player2.symbol}."
     sleep(1)
-    puts
-    puts "Let's start!"
-    puts
+    puts "Let's start!🔑"
     sleep(1)
   end
 
   def main_part
-    @players.values.each do |player|
-      draw_board
-      puts
-      puts "It's #{player}'s turn"
-      puts 'Please select an available cell from the board: '
-      main_part_logic(player)
-    end
-  end
+    @players.each do |player|
+      break if game_over
 
-  def main_part_logic(player)
-    loop do
-      if @counter < 9
-        choice = gets.chomp.to_i
-        if @choices.include?(choice)
-          @counter += 1
-          @choices[choice - 1] = @players.key(player)
-          break
+      puts "It's #{player.name}'s turn"
+      puts 'Please select an available cell from the board: '
+      good_answer = false
+      until good_answer
+        player.choice = gets.chomp.to_i
+        if @choices.include?(player.choice)
+          collect_answers_of_player(player)
+          good_answer = true
         else
-          puts "Invalid input, #{player} should try again (input should be a number form 1 to 9)"
+          puts "Invalid input❌, #{player.name} should try again (input should be a number form 1 to 9)"
         end
-      else
-        @winner = @player1
-        @game_over = true
-        return 0
       end
+      main_part_logic(player)
+      draw_board
     end
   end
 
   def begin_game
     initialize_game
-    main_part until @game_over
-    if @winner == 'VER'
-      puts "It's VER"
+    draw_board
+    main_part until game_over
+    puts
+    if @winner == 'DRAW'
+      puts "It's DRAW"
     else
-      puts "#{@winner} is Winner!⛄️"
+      puts "#{@winner} is Winner!💯"
     end
     puts
-    puts 'Game over'
+    puts 'Game over💤. Thank you for playing!🎲'
+    puts
   end
 end
 
