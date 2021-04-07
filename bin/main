@@ -71,3 +71,16 @@ def main_part_logic(player)
     end
   end
 end
+
+def begin_game
+  initialize_game
+  main_process until @game_over
+  if @winner == 'TIE'
+    puts "It's TIE"
+  else
+    puts "#{@winner} is Winner!"
+  end
+  puts
+  puts 'Game over'
+end
+end
