@@ -70,8 +70,6 @@ class Game
     end
   end
 
-  public
-
   def begin_game
     initialize_game
     draw_board
