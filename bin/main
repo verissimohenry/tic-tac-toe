@@ -75,8 +75,8 @@ class Game
     draw_board
     main_part until game_over
     puts
-    if @winner == 'DRAW'
-      puts "It's a DRAW"
+    if @winner == 'VER'
+      puts "It's VER"
     else
       puts "#{@winner} is Winner!💯"
     end
