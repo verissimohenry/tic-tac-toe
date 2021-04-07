@@ -42,3 +42,13 @@ def initialize_game
   puts
   sleep(1)
 end
+
+def main_part
+  @players.values.each do |player|
+    draw_board
+    puts
+    puts "It's #{player}'s turn"
+    puts 'Please select an available cell from the board: '
+    main_process_logic(player)
+  end
+end
