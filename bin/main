@@ -11,76 +11,75 @@ class Game
     @choices = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     @winner = 'VER'
   end
-end
 
-def draw_board
-  puts '+---+---+---+'
-  puts "| #{@choices[0]} | #{@choices[1]} | #{@choices[2]} |"
-  puts '+---+---+---+'
-  puts "| #{@choices[3]} | #{@choices[4]} | #{@choices[5]} |"
-  puts '+---+---+---+'
-  puts "| #{@choices[6]} | #{@choices[7]} | #{@choices[8]} |"
-  puts '+---+---+---+'
-end
-
-def initialize_game
-  puts
-  puts 'Welcome Gamers'
-  puts
-  puts 'Enter Player 1 name: '
-  @player1 = gets.chomp
-  @players['O'] = @player1
-  puts 'Enter player 2 name: '
-  @player2 = gets.chomp
-  @players['X'] = @player2
-  sleep(1)
-  puts
-  puts "#{@player1} will be O, and #{@player2} will be X."
-  sleep(1)
-  puts
-  puts "Let's start!"
-  puts
-  sleep(1)
-end
-
-def main_part
-  @players.values.each do |player|
-    draw_board
-    puts
-    puts "It's #{player}'s turn"
-    puts 'Please select an available cell from the board: '
-    main_part_logic(player)
+  def draw_board
+    puts '+---+---+---+'
+    puts "| #{@choices[0]} | #{@choices[1]} | #{@choices[2]} |"
+    puts '+---+---+---+'
+    puts "| #{@choices[3]} | #{@choices[4]} | #{@choices[5]} |"
+    puts '+---+---+---+'
+    puts "| #{@choices[6]} | #{@choices[7]} | #{@choices[8]} |"
+    puts '+---+---+---+'
   end
-end
 
-def main_part_logic(player)
-  loop do
-    if @counter < 9
-      choice = gets.chomp.to_i
-      if @choices.include?(choice)
-        @counter += 1
-        @choices[choice - 1] = @players.key(player)
-        break
-      else
-        puts "Invalid input, #{player} should try again (input should be a number form 1 to 9)"
-      end
-    else
-      @winner = @player1
-      @game_over = true
-      return 0
+  def initialize_game
+    puts
+    puts 'Welcome Gamers'
+    puts
+    puts 'Enter Player 1 name: '
+    @player1 = gets.chomp
+    @players['O'] = @player1
+    puts 'Enter player 2 name: '
+    @player2 = gets.chomp
+    @players['X'] = @player2
+    sleep(1)
+    puts
+    puts "#{@player1} will be O, and #{@player2} will be X."
+    sleep(1)
+    puts
+    puts "Let's start!"
+    puts
+    sleep(1)
+  end
+
+  def main_part
+    @players.values.each do |player|
+      draw_board
+      puts
+      puts "It's #{player}'s turn"
+      puts 'Please select an available cell from the board: '
+      main_part_logic(player)
     end
   end
-end
 
-def begin_game
-  initialize_game
-  main_process until @game_over
-  if @winner == 'TIE'
-    puts "It's TIE"
-  else
-    puts "#{@winner} is Winner!"
+  def main_part_logic(player)
+    loop do
+      if @counter < 9
+        choice = gets.chomp.to_i
+        if @choices.include?(choice)
+          @counter += 1
+          @choices[choice - 1] = @players.key(player)
+          break
+        else
+          puts "Invalid input, #{player} should try again (input should be a number form 1 to 9)"
+        end
+      else
+        @winner = @player1
+        @game_over = true
+        return 0
+      end
+    end
   end
-  puts
-  puts 'Game over'
-end
+
+  def begin_game
+    initialize_game
+    main_process until @game_over
+    if @winner == 'TIE'
+      puts "It's TIE"
+    else
+      puts "#{@winner} is Winner!"
+    end
+    puts
+    puts 'Game over'
+  end
 end
