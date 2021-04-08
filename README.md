@@ -34,6 +34,13 @@ After cloning the repository, open the terminal, `cd into the directory` where t
 1. Ruby
 2. Text Editor for Ruby`
 
+## Usage instruction
+
+1. Make sure the game displayed on the shell.
+2. Run `cd bin/`
+3. Run ```main``` to start the game.
+
+
 ## Author
 
 👤 **Verissimo Henry**
