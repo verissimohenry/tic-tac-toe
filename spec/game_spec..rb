@@ -40,4 +40,54 @@ describe GameLogic do
       expect(gl.valid_name('toyin')).to eql(true)
     end
   end
+  describe '#main_part_logic' do
+    it 'returns true because player henry has winner combination 1, 2, 3' do
+      player.answers = [1, 2, 3]
+      expect(gl.main_part_logic(player)).to be true
+    end
+    it 'returns true because player henry has winner combination 2, 5, 8' do
+      player.answers = [2, 5, 3, 8]
+      expect(gl.main_part_logic(player)).to be true
+    end
+    it 'returns true because player henry has winner combination 1, 5, 9' do
+      player.answers = [1, 9, 5]
+      expect(gl.main_part_logic(player)).to be true
+    end
+    it 'returns true because player henry has winner combination 7, 8, 9' do
+      player.answers = [8, 7, 1, 9]
+      expect(gl.main_part_logic(player)).to be true
+    end
+    it 'returns true because player henry has answers 4, 5, 6 and we have a winner' do
+      player.answers = [1, 4, 6, 5]
+      expect(gl.main_part_logic(player)).to be true
+    end
+    it 'returns true because player henry has answers 1, 4, 7 and we have a winner' do
+      player.answers = [1, 4, 6, 7]
+      expect(gl.main_part_logic(player)).to be true
+    end
+    it 'returns true because player henry has answers 2, 5, 8 and we have a winner' do
+      player.answers = [8, 2, 5, 7]
+      expect(gl.main_part_logic(player)).to be true
+    end
+    it 'returns true because player henry has answers 3, 6, 9 and we have a winner' do
+      player.answers = [3, 2, 6, 9]
+      expect(gl.main_part_logic(player)).to be true
+    end
+    it 'returns true because player henry has answers 3, 5, 7 and we have a winner' do
+      player.answers = [7, 5, 3]
+      expect(gl.main_part_logic(player)).to be true
+    end
+    it "returns true because player henry has 5 answers and it's a draw or ilie is loser, game is over" do
+      player.answers = [1, 2, 4, 5, 9]
+      expect(gl.main_part_logic(player)).to be true
+    end
+    it "returns false because player henry doesn't have enough answers" do
+      player.answers = [5]
+      expect(gl.main_part_logic(player)).to be false
+    end
+    it "returns false because player henry doesn't have enough answers" do
+      player.answers = [5, 6]
+      expect(gl.main_part_logic(player)).to be false
+    end
+  end
 end
