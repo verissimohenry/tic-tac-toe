@@ -35,7 +35,7 @@ describe Player do
       player.answers = [1, 2, 3]
       player.symbol = 'X'
       player.choice = 9
-      expect(player.to_s).to eql("Name = #{name} answers = #{answers} symbol = #{symbol} choice = #{choice}")
+      expect(player.to_s).to eql("Name = #{name} answers = #{answers} symbol = #{symbol} choiche = #{choice}")
     end
   end
 end
