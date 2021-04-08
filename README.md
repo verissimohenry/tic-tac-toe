@@ -34,6 +34,15 @@ After cloning the repository, open the terminal, `cd into the directory` where t
 1. Ruby
 2. Text Editor for Ruby
 
+## Methods
+
+- We write methods about,my_each, my_each_with_index, my_select,#my_all?# my_any? #my_none?# my_count, #my_map, #my_inject, and last we use proc im #my_map
+
+### Testing instructions
+
+-to run tests cd into enumerables then type in terminal:
+`rspec spec/enumerables_test.rb`
+
 ## Author
 
 👤 **Verissimo Henry**
