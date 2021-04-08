@@ -3,13 +3,13 @@ require './bin/main'
 
 describe GameLogic do
   let(:gl) { Game.new }
-  let(:player) { Player.new }
+  let(:player1) { Player.new }
   let(:player2) { Player.new }
-  let(:players) { [player, player2] }
+  let(:players) { [player1, player2] }
   describe '#initialize' do
     it 'checking setters and getters for player1 variable from Game class' do
-      gl.player1 = player
-      expect(gl.player1).to eql(player)
+      gl.player1 = player1
+      expect(gl.player1).to eql(player1)
     end
     it 'checking setters and getters for player2 variable from Game class' do
       gl.player2 = player2
