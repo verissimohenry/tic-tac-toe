@@ -4,7 +4,7 @@ require_relative '../lib/player_logic'
 
 class Game
   include GameLogic
-  attr_accessor :player1, :player2, :players
+  attr_reader :player1, :player2, :players
 
   def initialize()
     @player1 = Player.new
@@ -75,8 +75,8 @@ class Game
     draw_board
     main_part until game_over
     puts
-    if @winner == 'DRAW'
-      puts "It's DRAW"
+    if @winner == 'VER'
+      puts "It's VER"
     else
       puts "#{@winner} is Winner!💯"
     end
