@@ -20,4 +20,24 @@ describe GameLogic do
       expect(gl.players).to eql(players)
     end
   end
+  describe '#valid_name' do
+    it 'checking valid name with digits' do
+      expect(gl.valid_name('toyin')).to eql(false)
+    end
+    it 'checking valid name with symbols' do
+      expect(gl.valid_name('henry/')).to eql(false)
+    end
+    it 'checking valid name with length <= 1' do
+      expect(gl.valid_name('i')).to eql(false)
+    end
+    it 'checking valid name with digits and symbols' do
+      expect(gl.valid_name('he/nry')).to eql(false)
+    end
+    it 'checking valid name' do
+      expect(gl.valid_name('henry')).to eql(true)
+    end
+    it 'checking valid name' do
+      expect(gl.valid_name('toyin')).to eql(true)
+    end
+  end
 end
