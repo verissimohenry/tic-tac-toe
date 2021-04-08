@@ -4,7 +4,7 @@ require_relative '../lib/player_logic'
 
 class Game
   include GameLogic
-  attr_readers :player1, :player2, :players
+  attr_reader :player1, :player2, :players
 
   def initialize()
     @player1 = Player.new
